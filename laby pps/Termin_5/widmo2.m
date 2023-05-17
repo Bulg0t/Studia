@@ -1,12 +1,12 @@
 
 clear;
-f1=10.1;	% czestotliwosc sinosoidy
+f1=9.5;	% czestotliwosc sinosoidy
 A1=2;		% amplituda sinusoidy
 phi1=0.3;	% faza sinusoidy
 
 fp=220;		% czestotliwosc probkowania
 N=200;		% dlugosc sygnalu
-Nf=200;
+Nf=220;
 
 % generuj os czasu
 t=0:1/fp:(N-1)/fp;
