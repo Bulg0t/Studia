@@ -1,0 +1,230 @@
+
+S2F#show run
+Building configuration...
+
+Current configuration : 5068 bytes
+!
+! Last configuration change at 00:29:39 UTC Mon Mar 1 1993
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname S2F
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+ip dhcp snooping vlan 10
+ip dhcp snooping
+no ip domain-lookup
+!
+!
+crypto pki trustpoint TP-self-signed-3179324672
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3179324672
+ revocation-check none
+ rsakeypair TP-self-signed-3179324672
+!
+!
+crypto pki certificate chain TP-self-signed-3179324672
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33313739 33323436 3732301E 170D3933 30333031 30303030
+  35395A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 31373933
+  32343637 3230819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100C766 21D064FA C2A21850 ACA9759E B44DDDE6 DFC64785 FF8E992C 050AFCD1
+  2976CE31 E059042B 172C3915 B48F0B84 111193FE 69FB8571 43E0E8CC 9650FAE8
+  4BBADBFE 84EAC1D9 060ABB39 86A492A9 8B42863F 1158F157 1D4E9964 835A906E
+  1608D428 4684A752 B5B0C4B5 E0C956EB 1230BC5F BA4B5249 CF028914 96410256
+  680F0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 149CA50A 9FFB3CB9 56338D06 1EA20109 CF5660F0 A0301D06
+  03551D0E 04160414 9CA50A9F FB3CB956 338D061E A20109CF 5660F0A0 300D0609
+  2A864886 F70D0101 05050003 818100C1 4D0E6CAB 17267110 9F97B9F8 75628F08
+  2893C3B8 B20C0CF0 C27F5BDA 5592332E 0CD3C35B E6879286 DF406FC4 98D8AF76
+  01750B69 04897251 423316E7 5C5E5549 100D4A6A CE1C77C2 771B04DB A5AA515C
+  5389BAD7 CB047636 E3B36F44 9D294414 A92F0030 47F3B192 4F186F26 F0AEDEF1
+  987FD201 4B2DAB29 712F9A44 6A29F4
+        quit
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport trunk native vlan 333
+ switchport mode trunk
+ switchport nonegotiate
+ ip dhcp snooping trust
+!
+interface FastEthernet0/2
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/3
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/4
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/5
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/6
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/7
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/8
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/9
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/10
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/11
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/12
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/13
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/14
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/15
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/16
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/17
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/18
+ switchport access vlan 10
+ switchport mode access
+ switchport port-security maximum 2
+ switchport port-security violation protect
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 509a.4c35.1577
+ switchport port-security aging time 60
+ switchport port-security
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ ip dhcp snooping limit rate 5
+!
+interface FastEthernet0/19
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/20
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/21
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/22
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/23
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/24
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet0/1
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet0/2
+ switchport access vlan 999
+ switchport mode access
+ shutdown
+!
+interface Vlan1
+ ip address 192.168.1.98 255.255.255.240
+!
+interface Vlan10
+ ip address 192.168.10.202 255.255.255.0
+!
+ip default-gateway 192.168.10.1
+ip http server
+ip http secure-server
+!
+vstack
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end
